@@ -1,1 +1,1 @@
-# MAX-lm_1b
+# Language Model on One Billion Word Benchmark
