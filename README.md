@@ -44,16 +44,16 @@ Rafal Jozefowicz, Oriol Vinyals, Mike Schuster, Noam Shazeer: “Exploring the L
 
 ## 1. Build the Model
 
-Clone the `MAX-lm_1b` repository locally. In a terminal, run the following command:
+Clone this repository locally. In a terminal, run the following command:
 
 ```
-$ git clone https://github.ibm.com/IBMCode/MAX-lm_1b
+$ git clone https://github.com/IBM/MAX-News-Text-Generator.git
 ```
 
 Change directory into the repository base folder:
 
 ```
-$ cd MAX-lm_1b
+$ cd MAX-News-Text-Generator
 ```
 
 To build the docker image locally, run: 
