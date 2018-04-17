@@ -1,5 +1,6 @@
 import logging
 import os
+import re
 
 logger = logging.getLogger()
 
@@ -15,7 +16,10 @@ class ModelWrapper(object):
         pass
 
     def predict(self, x):
-        os.system("bazel-bin/lm_1b/lm_1b_eval --mode sample \
+        # this model does not like punctuation touching characters
+        x = re.sub('([.,!?()])', r' \1 ', x)  # https://stackoverflow.com/a/3645946/
+
+        os.system("python lm_1b/lm_1b_eval.py --mode sample \
                                      --prefix \"" + x + "\" \
                                      --pbtxt data/graph-2016-09-10.pbtxt \
                                      --vocab_file data/vocab-2016-09-10.txt  \

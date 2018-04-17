@@ -1,4 +1,4 @@
-FROM floydhub/dl-base:2.1.0-py3.22
+FROM continuumio/miniconda3
 
 RUN mkdir -p /workspace/data
 
@@ -30,9 +30,6 @@ RUN pip install --upgrade pip && \
 # Copy local files last so we don't redo all the object storage downloads 
 # and package installs every time we build the image.
 COPY . /workspace
-
-RUN cd /workspace && \
-    bazel build -c opt lm_1b/...
 
 EXPOSE 5000
 
