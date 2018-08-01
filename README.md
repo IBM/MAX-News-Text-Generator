@@ -1,4 +1,4 @@
-# IBM Code Model Asset Exchange: Text generation
+# IBM Code Model Asset Exchange: News Text Generator
 
 This repository contains code to instantiate and deploy a text generation model. This model recognizes a text file as an
 input and outputs a string. The model was trained on the One Billion Word Benchmark (http://arxiv.org/abs/1312.3005)
