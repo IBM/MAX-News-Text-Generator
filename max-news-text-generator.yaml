@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: max-news-text-generator
+spec:
+  selector:
+    app: max-news-text-generator
+  ports:
+  - port: 5000
+  type: NodePort
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: max-news-text-generator
+  labels:
+    app: max-news-text-generator
+spec:
+  selector:
+    matchLabels:
+      app: max-news-text-generator
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: max-news-text-generator
+    spec:
+      containers:
+      - name: max-news-text-generator
+        image: codait/max-news-text-generator:latest
+        ports:
+        - containerPort: 5000
