@@ -1,4 +1,4 @@
-FROM continuumio/miniconda3
+FROM codait/max-base
 
 RUN mkdir -p /workspace/data
 
@@ -10,15 +10,11 @@ ARG numpy_version=1.14.1
 ARG tf_version=1.5.0
 ARG keras_version=2.1.4
 
-RUN pip install --upgrade pip && \
-	pip install numpy==${numpy_version} && \
-    pip install tensorflow==${tf_version} && \
-    pip install flask-restplus
+RUN pip install numpy==${numpy_version} && \
+    pip install tensorflow==${tf_version}
 
-# Copy local files last so we don't redo all the object storage downloads 
-# and package installs every time we build the image.
 COPY . /workspace
 
 EXPOSE 5000
 
-CMD cd workspace/ && python app.py
+CMD python app.py

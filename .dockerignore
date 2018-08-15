@@ -1,2 +1,6 @@
 README.md
 Dockerfile
+.git
+.idea
+.pytest_cache/
+tests/__pycache__/
