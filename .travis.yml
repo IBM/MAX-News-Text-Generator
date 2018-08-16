@@ -5,14 +5,12 @@ python:
 services:
 - docker
 
-sudo: required
-
 install:
 - docker build -t max-news-text-generator .
 - docker run -it -d -p 5000:5000 max-news-text-generator
 
-before_script:
-- pip install pytest pycurl
+#before_script:
+#- pip install pytest pycurl
 
-script:
-- pytest tests/test.py
+#script:
+#- pytest tests/test.py
