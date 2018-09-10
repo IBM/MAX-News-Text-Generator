@@ -1,27 +1,23 @@
 import pytest
-import pycurl
-import io
-import json
+import requests
 
 
 def test_response():
-    assert 1 == 1
-    #c = pycurl.Curl()
-    #b = io.BytesIO()
-    #c.setopt(pycurl.URL, 'http://localhost:5000/model/predict')
-    #c.setopt(pycurl.HTTPHEADER, ['Accept:application/json', 'Content-Type: multipart/form-data'])
-    #c.setopt(pycurl.HTTPPOST, [('text', (pycurl.FORM_FILE, "data/sample1.txt"))])
-    #c.setopt(pycurl.WRITEFUNCTION, b.write)
-    #c.perform()
-    #assert c.getinfo(pycurl.RESPONSE_CODE) == 200
-    #c.close()
+    model_endpoint = 'http://localhost:5000/model/predict'
+    file_path = 'data/sample1.txt'
 
-    #response = b.getvalue()
-    #response = json.loads(response)
+    with open(file_path, 'rb') as file:
+        file_form = {'text': (file_path, file, 'text/plain')}
+        r = requests.post(url=model_endpoint, files=file_form)
 
-    #assert response['status'] == 'ok'
+    assert r.status_code == 200
 
-    #print("output: " + response['pred_txt'][0]['pred_txt'])
+    response = r.json()
+
+    assert response['status'] == 'ok'
+    assert len(response['pred_txt'][0]['pred_txt']) > 14  # output should contain more chars than input
+
+    print("output: " + response['pred_txt'][0]['pred_txt'])
 
 
 if __name__ == '__main__':

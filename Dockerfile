@@ -8,7 +8,6 @@ RUN tar -x -C /workspace/ -f /workspace/data/data.tar.gz -v && rm /workspace/dat
 # Python package versions
 ARG numpy_version=1.14.1
 ARG tf_version=1.5.0
-ARG keras_version=2.1.4
 
 RUN pip install numpy==${numpy_version} && \
     pip install tensorflow==${tf_version}

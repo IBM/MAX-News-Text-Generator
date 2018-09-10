@@ -1,6 +1,6 @@
-README.md
+*.md
 Dockerfile
-.git
-.idea
+.git/
+.idea/
 .pytest_cache/
 tests/__pycache__/
