@@ -1,6 +1,5 @@
 from flask_restplus import Namespace, Resource, fields
 from werkzeug.datastructures import FileStorage
-
 from config import MODEL_META_DATA
 from core.tensorflow import ModelWrapper, read_text
 
@@ -19,25 +18,23 @@ class Model(Resource):
     @api.doc('get_metadata')
     @api.marshal_with(model_meta)
     def get(self):
-        '''Return the metadata associated with the model'''
+        """Return the metadata associated with the model"""
         return MODEL_META_DATA
 
 
 pred_txt = api.model('LabelPrediction', {
-    'pred_txt': fields.String(required=True)
+    'pred_txt': fields.String(required=True, description='List containing the generated text')
 })
 
 
 predict_response = api.model('ModelPredictResponse', {
     'status': fields.String(required=True, description='Response status message'),
-    'pred_txt': fields.List(fields.Nested(pred_txt), description='Predicted labels and probabilities')
-    # 'request_id': fields.String(required=True, description='Response id for tracking purposes'),
-    # 'prediction': fields.Nested(model_prediction, description='Model prediction')
+    'pred_txt': fields.List(fields.Nested(pred_txt), description='Generated text based on input')
 })
 
 # set up parser for image input data
 text_parser = api.parser()
-text_parser.add_argument('text', type=FileStorage, location='files', required=True)
+text_parser.add_argument('text', type=FileStorage, location='files', required=True, help='A text file')
 
 
 @api.route('/predict')
@@ -49,7 +46,7 @@ class Predict(Resource):
     @api.expect(text_parser)
     @api.marshal_with(predict_response)
     def post(self):
-        '''Make a prediction given input data'''
+        """Make a prediction given input data"""
         result = {'status': 'error'}
 
         args = text_parser.parse_args()
