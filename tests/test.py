@@ -15,9 +15,9 @@ def test_response():
     response = r.json()
 
     assert response['status'] == 'ok'
-    assert len(response['pred_txt'][0]['pred_txt']) > 14  # output should contain more chars than input
+    assert len(response['pred_txt']) > 14  # output should contain more chars than input
 
-    print("output: " + response['pred_txt'][0]['pred_txt'])
+    print("output: " + response['pred_txt'])
 
 
 if __name__ == '__main__':
