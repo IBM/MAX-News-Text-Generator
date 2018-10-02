@@ -22,14 +22,9 @@ class Model(Resource):
         return MODEL_META_DATA
 
 
-pred_txt = api.model('LabelPrediction', {
-    'pred_txt': fields.String(required=True, description='List containing the generated text')
-})
-
-
 predict_response = api.model('ModelPredictResponse', {
     'status': fields.String(required=True, description='Response status message'),
-    'pred_txt': fields.List(fields.Nested(pred_txt), description='Generated text based on input')
+    'pred_txt': fields.String(required=True, description='Generated text based on input')
 })
 
 # set up parser for image input data
@@ -54,8 +49,7 @@ class Predict(Resource):
         text = read_text(text_data)
         preds = self.model_wrapper.predict(text)
 
-        label_preds = [{'pred_txt': preds}]
-        result['pred_txt'] = label_preds
+        result['pred_txt'] = preds
         result['status'] = 'ok'
 
         return result

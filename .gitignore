@@ -2,3 +2,4 @@
 .idea
 .pytest_cache/
 tests/__pycache__/
+.DS_Store

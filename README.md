@@ -122,7 +122,7 @@ $ curl -F "text=@data/sample1.txt" -XPOST http://localhost:5000/model/predict
 You should see a JSON response like that below:
 
 ```json
-{"status": "ok", "pred_txt": [{"pred_txt": "This is a test case .. but this is at least an investigation into the types of accidents they are involved  . </S> "}]}
+{"status": "ok", "pred_txt": "This is a test rather than an alternative view . </S> "}
 ```
 
 ### 4. Development
