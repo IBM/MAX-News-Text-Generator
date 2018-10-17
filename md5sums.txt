@@ -1,0 +1,17 @@
+07f74340464d4e7aa1c1faa4389639c4  data/ckpt-base
+ee9f34986c458180e21a2358d229ff0e  data/ckpt-char-embedding
+85f1bfb2ac77b23449afb790eb3722c5  data/ckpt-lstm
+1cd02bc7ff542e8d206f12cacc6f9004  data/ckpt-softmax0
+e9350b4ef403cf0edfd6df8b349ed44a  data/ckpt-softmax1
+c1ac2c5459d56c9165b451bd362d27b1  data/ckpt-softmax2
+4d1c732bd56f408f48dd78b4d85cf168  data/ckpt-softmax3
+f23de860ea468406c8cfe59087e3e3bf  data/ckpt-softmax4
+6fbc354d4bafaca7b98ca1758a29a9ce  data/ckpt-softmax5
+645383201795d27ef2e17af90ca7ece1  data/ckpt-softmax6
+2e39a884fbb17bed30d31ce7ca04bfe6  data/ckpt-softmax7
+8248d2d8d3b52ff071761ea90f5f3a85  data/ckpt-softmax8
+bc326fe22e068d4614331447b42d76c1  data/graph-2016-09-10.pbtxt
+ce114e4501d2f4e2dcea3e17b546f339  data/sample1.txt
+cb2bd231beb9a8b84ac9ca8fec8912b2  data/sample2.txt
+e6376fef0b7ce023e0f871a206f15d93  data/sample3.txt
+875cbcabfebae95fac1523cb58db92b5  data/vocab-2016-09-10.txt
