@@ -21,9 +21,9 @@ class ModelWrapper(object):
 
         os.system("python lm_1b/lm_1b_eval.py --mode sample \
                                      --prefix \"" + x + "\" \
-                                     --pbtxt data/graph-2016-09-10.pbtxt \
-                                     --vocab_file data/vocab-2016-09-10.txt  \
-                                     --ckpt 'data/ckpt-*' \
+                                     --pbtxt assets/data/graph-2016-09-10.pbtxt \
+                                     --vocab_file assets/data/vocab-2016-09-10.txt  \
+                                     --ckpt 'assets/data/ckpt-*' \
                                      --num_samples 1")
 
         txt_file = open("out.txt", "r")
