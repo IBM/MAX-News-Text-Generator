@@ -1,9 +1,12 @@
 FROM codait/max-base
 
-RUN mkdir -p /workspace/data
+ARG model_bucket=http://max-assets.s3-api.us-geo.objectstorage.softlayer.net/news-text-generator/1.0
+ARG model_file=assets.tar.gz
 
-RUN wget -nv --show-progress --progress=bar:force:noscroll http://max-assets.s3-api.us-geo.objectstorage.softlayer.net/lm_1b/data.tar.gz && mv data.tar.gz /workspace/data/
-RUN tar -x -C /workspace/ -f /workspace/data/data.tar.gz -v && rm /workspace/data/data.tar.gz
+WORKDIR /workspace
+
+RUN wget -nv --show-progress --progress=bar:force:noscroll ${model_bucket}/${model_file} --output-document=/workspace/assets/${model_file}
+RUN tar -x -C assets/ -f assets/${model_file} -v && rm assets/${model_file}
 
 COPY requirements.txt /workspace
 RUN pip install -r requirements.txt
