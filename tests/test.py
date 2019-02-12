@@ -13,7 +13,10 @@ def test_swagger():
 
     json = r.json()
     assert 'swagger' in json
-    assert json.get('info') and json.get('info').get('title') == 'Model Asset Exchange Microservice'
+    assert json.get('info') and json.get('info').get('title') == 'MAX News Text Generator'
+    assert json.get('info') and json.get('info').get('description') == 'Generate English-language text similar to ' +\
+                                                                       'the news articles in the One Billion Words ' +\
+                                                                       'data set.'
 
 
 def test_metadata():

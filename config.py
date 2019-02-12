@@ -8,6 +8,6 @@ RESTPLUS_MASK_SWAGGER = False
 SWAGGER_UI_DOC_EXPANSION = 'none'
 
 # API metadata
-API_TITLE = 'Model Asset Exchange Microservice'
-API_DESC = 'An API for serving models'
+API_TITLE = 'MAX News Text Generator'
+API_DESC = 'Generate English-language text similar to the news articles in the One Billion Words data set.'
 API_VERSION = '0.1'
