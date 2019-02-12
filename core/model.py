@@ -1,19 +1,30 @@
 import logging
 import os
 import re
+from maxfw.model import MAXModelWrapper
 
 logger = logging.getLogger()
 
 
-def read_text(text_data):
-    text = text_data.decode("utf-8")
-    return text
-
-
-class ModelWrapper(object):
+class ModelWrapper(MAXModelWrapper):
     """Model wrapper for Keras models"""
+
+    MODEL_NAME = 'lm_1b'
+    MODEL_LICENSE = "Apache v2"
+    MODEL_META_DATA = {
+        'id': '{}'.format(MODEL_NAME.lower()),
+        'name': '{} TensorFlow Model'.format(MODEL_NAME),
+        'description': 'Generative language model trained on the One Billion Words data set',
+        'type': 'Generative Language Model',
+        'license': '{}'.format(MODEL_LICENSE)
+    }
+
     def __init__(self):
         pass
+
+    def read_text(self, text_data):
+        text = text_data.decode("utf-8")
+        return text
 
     def predict(self, x):
         # this model does not like punctuation touching characters
