@@ -38,6 +38,7 @@ class ModelWrapper(MAXModelWrapper):
                                      --num_samples 1")
 
         try:
+            # if the above os.system command fails then "out.txt" is never created
             txt_file = open("out.txt", "r")
         except OSError:
             print("Error generating a prediction, this is likely due to a lack of memory allocated to Docker")
