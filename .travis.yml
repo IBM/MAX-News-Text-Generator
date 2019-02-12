@@ -6,7 +6,7 @@ services:
 install:
   - docker build -t max-news-text-generator .
   - docker run -it -d -p 5000:5000 max-news-text-generator
-  - pip install pytest requests pytest
+  - pip install pytest requests flake8
 before_script:
   - flake8 . --max-line-length=127
   - sleep 30
