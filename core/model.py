@@ -37,7 +37,12 @@ class ModelWrapper(MAXModelWrapper):
                                      --ckpt 'assets/data/ckpt-*' \
                                      --num_samples 1")
 
-        txt_file = open("out.txt", "r")
-        txt = txt_file.read()
-        txt_file.close()
-        return txt
+        try:
+            txt_file = open("out.txt", "r")
+        except OSError:
+            print("Error generating a prediction, this is likely due to a lack of memory allocated to Docker")
+            print("The minimum recommended resources for this model is 8 GB Memory and 4 CPUs")
+        else:
+            txt = txt_file.read()
+            txt_file.close()
+            return txt
