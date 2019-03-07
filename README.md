@@ -5,7 +5,7 @@ input and outputs a string. The model was trained on the One Billion Word Benchm
 data set. The input to the model is a simple text file, and the output is a string container the words that are
 predicted to follow. The model has a vocabulary of approximately 800,000 words.
 
-The model files are hosted on IBM Cloud Object Storage. The code in this repository deploys the model as a web service
+The model files are hosted on [IBM Cloud Object Storage](http://max-assets.s3-api.us-geo.objectstorage.softlayer.net/news-text-generator/1.0/assets.tar.gz). The code in this repository deploys the model as a web service
 in a Docker container. This repository was developed as part of the
 [IBM Code Model Asset Exchange](https://developer.ibm.com/code/exchanges/models/).
 
