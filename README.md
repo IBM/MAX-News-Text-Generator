@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/IBM/MAX-News-Text-Generator.svg?branch=master)](https://travis-ci.com/IBM/MAX-News-Text-Generator) [![Website Status](https://img.shields.io/website/http/max-news-text-generator.max.us-south.containers.appdomain.cloud/swagger.json.svg?label=api+demo)](http://max-news-text-generator.max.us-south.containers.appdomain.cloud/)
+
 # IBM Code Model Asset Exchange: News Text Generator
 
 This repository contains code to instantiate and deploy a text generation model. This model recognizes a text file as an
