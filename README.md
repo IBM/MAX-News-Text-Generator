@@ -4,7 +4,7 @@
 
 This repository contains code to instantiate and deploy a text generation model. This model recognizes a text file as an
 input and outputs a string. The model was trained on the One Billion Word Benchmark (http://arxiv.org/abs/1312.3005)
-data set. The input to the model is a simple text file, and the output is a string container the words that are
+data set. The input to the model is a simple text file, and the output is a string containing the words that are
 predicted to follow. The model has a vocabulary of approximately 800,000 words.
 
 The model files are hosted on [IBM Cloud Object Storage](http://max-assets.s3.us.cloud-object-storage.appdomain.cloud/news-text-generator/1.0/assets.tar.gz). The code in this repository deploys the model as a web service
