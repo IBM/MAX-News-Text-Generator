@@ -26,7 +26,7 @@ class ModelWrapper(MAXModelWrapper):
         text = text_data.decode("utf-8")
         return text
 
-    def predict(self, x):
+    def _predict(self, x):
         # this model does not like punctuation touching characters
         x = re.sub('([.,!?()])', r' \1 ', x)  # https://stackoverflow.com/a/3645946/
 
