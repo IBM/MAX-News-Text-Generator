@@ -32,7 +32,7 @@ def test_swagger():
     assert json.get('info') and json.get('info').get('title') == 'MAX News Text Generator'
     assert json.get('info') and json.get('info').get('description') == 'Generate English-language text similar to ' +\
                                                                        'the news articles in the One Billion Words ' +\
-                                                                       'data set.'
+                                                                       'samples set.'
 
 
 def test_metadata():
@@ -45,14 +45,14 @@ def test_metadata():
     metadata = r.json()
     assert metadata['id'] == 'lm_1b'
     assert metadata['name'] == 'lm_1b TensorFlow Model'
-    assert metadata['description'] == 'Generative language model trained on the One Billion Words data set'
+    assert metadata['description'] == 'Generative language model trained on the One Billion Words samples set'
     assert metadata['license'] == 'Apache v2'
 
 
 @pytest.mark.skipif("TRAVIS" in os.environ, reason="test runs out of memory on Travis-CI")
 def test_predict():
     model_endpoint = 'http://localhost:5000/model/predict'
-    file_path = 'data/sample1.txt'
+    file_path = 'samples/sample1.txt'
 
     with open(file_path, 'rb') as file:
         file_form = {'text': (file_path, file, 'text/plain')}

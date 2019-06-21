@@ -11,7 +11,4 @@ f23de860ea468406c8cfe59087e3e3bf  assets/data/ckpt-softmax4
 2e39a884fbb17bed30d31ce7ca04bfe6  assets/data/ckpt-softmax7
 8248d2d8d3b52ff071761ea90f5f3a85  assets/data/ckpt-softmax8
 bc326fe22e068d4614331447b42d76c1  assets/data/graph-2016-09-10.pbtxt
-ce114e4501d2f4e2dcea3e17b546f339  data/sample1.txt
-cb2bd231beb9a8b84ac9ca8fec8912b2  data/sample2.txt
-e6376fef0b7ce023e0f871a206f15d93  data/sample3.txt
 875cbcabfebae95fac1523cb58db92b5  assets/data/vocab-2016-09-10.txt
