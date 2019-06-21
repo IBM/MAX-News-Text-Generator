@@ -60,7 +60,7 @@ tf.flags.DEFINE_string('sentence', '',
                        'Used as input for "dump_lstm_emb" mode.')
 # eval mode flags.
 tf.flags.DEFINE_string('input_data', '',
-                       'Input samples files for eval model.')
+                       'Input data files for eval model.')
 tf.flags.DEFINE_integer('max_eval_steps', 1000000,
                         'Maximum mumber of steps to run "eval" mode.')
 

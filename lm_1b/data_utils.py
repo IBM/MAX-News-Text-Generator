@@ -187,7 +187,7 @@ def get_batch(generator, batch_size, num_steps, max_word_length, pad=False):
                     try:
                         cur_stream[i] = list(generator.next())
                     except StopIteration:
-                        # No more samples, exhaust current streams and quit
+                        # No more data, exhaust current streams and quit
                         no_more_data = True
                         break
 
@@ -209,7 +209,7 @@ def get_batch(generator, batch_size, num_steps, max_word_length, pad=False):
                     break
 
         if no_more_data and np.sum(weights) == 0:
-            # There is no more samples and this is an empty batch. Done!
+            # There is no more data and this is an empty batch. Done!
             break
         yield inputs, char_inputs, global_word_ids, targets, weights
 
@@ -217,7 +217,7 @@ def get_batch(generator, batch_size, num_steps, max_word_length, pad=False):
 class LM1BDataset(object):
     """Utility class for 1B word benchmark dataset.
 
-    The current implementation reads the samples from the tokenized text files.
+    The current implementation reads the data from the tokenized text files.
     """
 
     def __init__(self, filepattern, vocab):
@@ -244,7 +244,7 @@ class LM1BDataset(object):
         Returns:
           list of (id, char_id, global_word_id) tuples.
         """
-        tf.logging.info('Loading samples from: %s', shard_name)
+        tf.logging.info('Loading data from: %s', shard_name)
         with tf.gfile.Open(shard_name) as f:
             sentences = f.readlines()
         chars_ids = [self.vocab.encode_chars(sentence) for sentence in sentences]
