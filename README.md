@@ -1,5 +1,7 @@
 [![Build Status](https://travis-ci.org/IBM/MAX-News-Text-Generator.svg?branch=master)](https://travis-ci.org/IBM/MAX-News-Text-Generator) [![Website Status](https://img.shields.io/website/http/max-news-text-generator.max.us-south.containers.appdomain.cloud/swagger.json.svg?label=api+demo)](http://max-news-text-generator.max.us-south.containers.appdomain.cloud/)
 
+[<img src="docs/deploy-max-to-ibm-cloud-with-kubernetes-button.png" width="400px">](http://ibm.biz/max-to-ibm-cloud-tutorial) 
+
 # IBM Code Model Asset Exchange: News Text Generator
 
 This repository contains code to instantiate and deploy a text generation model. This model recognizes a text file as an
@@ -9,7 +11,8 @@ predicted to follow. The model has a vocabulary of approximately 800,000 words.
 
 The model files are hosted on [IBM Cloud Object Storage](http://max-assets.s3.us.cloud-object-storage.appdomain.cloud/news-text-generator/1.0/assets.tar.gz). The code in this repository deploys the model as a web service
 in a Docker container. This repository was developed as part of the
-[IBM Code Model Asset Exchange](https://developer.ibm.com/code/exchanges/models/).
+[IBM Code Model Asset Exchange](https://developer.ibm.com/code/exchanges/models/) and the public API is powered by
+[IBM Cloud](https://ibm.biz/Bdz2XM).
 
 ## Model Metadata
 | Domain | Application | Industry  | Framework | Training Data | Input Data Format |
@@ -65,6 +68,9 @@ $ kubectl apply -f https://raw.githubusercontent.com/IBM/MAX-News-Text-Generator
 
 The model will be available internally at port `5000`, but can also be accessed externally through the `NodePort`.
 
+A more elaborate tutorial on how to deploy this MAX model to production on [IBM Cloud](https://ibm.biz/Bdz2XM) can be
+found [here](http://ibm.biz/max-to-ibm-cloud-tutorial).
+
 ## Run Locally
 
 1. [Build the Model](#1-build-the-model)
@@ -109,8 +115,8 @@ $ docker run -it -p 5000:5000 max-news-text-generator
 The API server automatically generates an interactive Swagger documentation page. Go to `http://localhost:5000` to load
 it. From there you can explore the API and also create test requests.
 
-Use the `model/predict` endpoint to load some seed text (you can use one of the test files from the `data` folder) and get
-predicted output from the API.
+Use the `model/predict` endpoint to load some seed text (you can use one of the test files from the `samples` folder)
+and get predicted output from the API.
 
 
 ![Swagger Doc Screenshot](docs/swagger-screenshot.png)
@@ -118,7 +124,7 @@ predicted output from the API.
 You can also test it on the command line, for example:
 
 ```
-$ curl -F "text=@data/sample1.txt" -XPOST http://localhost:5000/model/predict
+$ curl -F "text=@samples/sample1.txt" -XPOST http://localhost:5000/model/predict
 ```
 
 You should see a JSON response like that below:
