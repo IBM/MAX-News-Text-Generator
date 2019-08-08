@@ -18,7 +18,6 @@
 
 import sys
 import numpy as np
-from six.moves import xrange
 import tensorflow as tf
 from google.protobuf import text_format
 import lm_1b.data_utils as data_utils
@@ -104,7 +103,7 @@ def _SampleModel(prefix_words, vocab):
 
     prefix = [vocab.word_to_id(w) for w in prefix_words.split()]
     prefix_char_ids = [vocab.word_to_char_ids(w) for w in prefix_words.split()]
-    for _ in xrange(_NUM_SAMPLES):
+    for _ in range(_NUM_SAMPLES):
         inputs = np.zeros([BATCH_SIZE, NUM_TIMESTEPS], np.int32)
         char_ids_inputs = np.zeros(
             [BATCH_SIZE, NUM_TIMESTEPS, vocab.max_word_length], np.int32)
