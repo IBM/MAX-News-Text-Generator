@@ -44,7 +44,11 @@ class ModelPredictAPI(PredictAPI):
         text = self.model_wrapper.read_text(text_data)
         preds = self.model_wrapper.predict(text)
 
+        if preds is None:
+            result['status'] = 'error'
+        else:
+            result['status'] = 'ok'
+
         result['pred_txt'] = preds
-        result['status'] = 'ok'
 
         return result
