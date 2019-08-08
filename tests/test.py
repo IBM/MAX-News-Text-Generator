@@ -47,6 +47,7 @@ def test_metadata():
     assert metadata['name'] == 'lm_1b TensorFlow Model'
     assert metadata['description'] == 'Generative language model trained on the One Billion Words data set'
     assert metadata['license'] == 'Apache v2'
+    assert metadata['source'] == 'https://developer.ibm.com/exchanges/models/all/max-news-text-generator/'
 
 
 @pytest.mark.skipif("TRAVIS" in os.environ, reason="test runs out of memory on Travis-CI")
