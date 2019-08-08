@@ -49,7 +49,7 @@ class ModelWrapper(MAXModelWrapper):
 
         try:
             output = lm_1b_eval.generate(x)
-        except OSError:
+        except MemoryError:
             print("Error generating a prediction, this is likely due to a lack of memory allocated to Docker")
             print("The minimum recommended resources for this model is 8 GB Memory and 4 CPUs")
         else:
