@@ -24,7 +24,7 @@ input_parser.add_argument('text', type=FileStorage, location='files', required=T
 
 predict_response = MAX_API.model('ModelPredictResponse', {
     'status': fields.String(required=True, description='Response status message'),
-    'pred_txt': fields.String(required=True, description='Generated text based on input')
+    'pred_txt': fields.String(required=False, description='Generated text based on input')
 })
 
 
@@ -44,7 +44,11 @@ class ModelPredictAPI(PredictAPI):
         text = self.model_wrapper.read_text(text_data)
         preds = self.model_wrapper.predict(text)
 
-        result['pred_txt'] = preds
-        result['status'] = 'ok'
+        if preds is None:
+            result['status'] = 'error'
+            result['pred_txt'] = ''
+        else:
+            result['status'] = 'ok'
+            result['pred_txt'] = preds
 
         return result

@@ -47,6 +47,19 @@ def test_metadata():
     assert metadata['name'] == 'lm_1b TensorFlow Model'
     assert metadata['description'] == 'Generative language model trained on the One Billion Words data set'
     assert metadata['license'] == 'Apache v2'
+    assert metadata['source'] == 'https://developer.ibm.com/exchanges/models/all/max-news-text-generator/'
+
+
+@pytest.mark.skipif("TRAVIS" not in os.environ, reason="test runs out of memory on Travis-CI")
+def test_predict_travis():
+    model_endpoint = 'http://localhost:5000/model/predict'
+    file_path = 'samples/sample1.txt'
+
+    with open(file_path, 'rb') as file:
+        file_form = {'text': (file_path, file, 'text/plain')}
+        r = requests.post(url=model_endpoint, files=file_form)
+
+    assert r.status_code == 500
 
 
 @pytest.mark.skipif("TRAVIS" in os.environ, reason="test runs out of memory on Travis-CI")
