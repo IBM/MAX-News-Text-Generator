@@ -51,7 +51,7 @@ def test_metadata():
 
 
 @pytest.mark.skipif("TRAVIS" not in os.environ, reason="test runs out of memory on Travis-CI")
-def test_predict():
+def test_predict_travis():
     model_endpoint = 'http://localhost:5000/model/predict'
     file_path = 'samples/sample1.txt'
 
