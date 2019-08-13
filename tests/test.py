@@ -50,7 +50,7 @@ def test_metadata():
     assert metadata['source'] == 'https://developer.ibm.com/exchanges/models/all/max-news-text-generator/'
 
 
-@pytest.mark.skipif("TRAVIS" in os.environ, reason="test runs out of memory on Travis-CI")
+@pytest.mark.skipif("TRAVISxxxxxxxxx" in os.environ, reason="test runs out of memory on Travis-CI")
 def test_predict():
     model_endpoint = 'http://localhost:5000/model/predict'
     file_path = 'samples/sample1.txt'
