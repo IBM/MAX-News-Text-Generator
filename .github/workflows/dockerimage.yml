@@ -1,6 +1,6 @@
 name: Docker Image CI
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
 
@@ -10,5 +10,26 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+
+    - name: Setup Python
+      uses: actions/setup-python@v1
+      with:
+          python-version: 3.6
+
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build -t max-news-text-generator .
+
+    - name: Run the Docker image
+      run: docker run -it --rm -d -p 5000:5000 max-news-text-generator
+
+    - name: Install dependencies
+      run: pip install pytest requests flake8
+
+    - name: Lint with flake8
+      run: flake8 . --max-line-length=127
+
+    - name: Wait for container to get ready
+      run: sleep 30
+
+    - name: Test with pytest
+      run: pytest tests/test.py
