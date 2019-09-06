@@ -62,7 +62,6 @@ def test_predict_travis():
     assert r.status_code == 500
 
 
-@pytest.mark.skipif("TRAVIS" in os.environ, reason="test runs out of memory on Travis-CI")
 def test_predict():
     model_endpoint = 'http://localhost:5000/model/predict'
     file_path = 'samples/sample1.txt'
