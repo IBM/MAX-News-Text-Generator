@@ -33,6 +33,7 @@ def test_swagger():
     assert json.get('info') and json.get('info').get('description') == 'Generate English-language text similar to ' +\
                                                                        'the news articles in the One Billion Words ' +\
                                                                        'data set.'
+    assert 1 == 2
 
 
 def test_metadata():
