@@ -16,7 +16,7 @@
 
 FROM codait/max-base:v1.1.3
 
-ARG model_bucket=https://max-assets-prod.s3.us-south.cloud-object-storage.appdomain.cloud/max-news-text-generator/1.0.0
+ARG model_bucket=https://max.cdn.appdomain.cloud/max-news-text-generator/1.0.0
 ARG model_file=assets.tar.gz
 
 WORKDIR /workspace
