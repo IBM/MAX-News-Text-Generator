@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/IBM/MAX-News-Text-Generator.svg?branch=master)](https://travis-ci.org/IBM/MAX-News-Text-Generator) [![Website Status](https://img.shields.io/website/http/max-news-text-generator.max.us-south.containers.appdomain.cloud/swagger.json.svg?label=api+demo)](http://max-news-text-generator.max.us-south.containers.appdomain.cloud/)
+[![Build Status](https://travis-ci.org/IBM/MAX-News-Text-Generator.svg?branch=master)](https://travis-ci.org/IBM/MAX-News-Text-Generator) [![Website Status](https://img.shields.io/website/http/max-news-text-generator.codait-prod-41208c73af8fca213512856c7a09db52-0000.us-east.containers.appdomain.cloud/swagger.json.svg?label=api+demo)](http://max-news-text-generator.codait-prod-41208c73af8fca213512856c7a09db52-0000.us-east.containers.appdomain.cloud)
 
 [<img src="docs/deploy-max-to-ibm-cloud-with-kubernetes-button.png" width="400px">](http://ibm.biz/max-to-ibm-cloud-tutorial) 
 
@@ -9,7 +9,7 @@ input and outputs a string. The model was trained on the One Billion Word Benchm
 data set. The input to the model is a simple text file, and the output is a string containing the words that are
 predicted to follow. The model has a vocabulary of approximately 800,000 words.
 
-The model files are hosted on [IBM Cloud Object Storage](http://max-assets.s3.us.cloud-object-storage.appdomain.cloud/news-text-generator/1.0/assets.tar.gz). The code in this repository deploys the model as a web service
+The model files are hosted on [IBM Cloud Object Storage](https://max-cdn.cdn.appdomain.cloud/max-news-text-generator/1.0.0/assets.tar.gz). The code in this repository deploys the model as a web service
 in a Docker container. This repository was developed as part of the
 [IBM Code Model Asset Exchange](https://developer.ibm.com/code/exchanges/models/) and the public API is powered by
 [IBM Cloud](https://ibm.biz/Bdz2XM).
