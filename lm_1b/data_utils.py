@@ -233,7 +233,7 @@ class LM1BDataset(object):
 
     def _load_random_shard(self):
         """Randomly select a file and read it."""
-        return self._load_shard(random.choice(self._all_shards))
+        return self._load_shard(random.choice(self._all_shards))  # nosec - opening random file
 
     def _load_shard(self, shard_name):
         """Read one file and convert to ids.
