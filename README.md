@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/IBM/MAX-News-Text-Generator.svg?branch=master)](https://travis-ci.org/IBM/MAX-News-Text-Generator) [![Website Status](https://img.shields.io/website/http/max-news-text-generator.codait-prod-41208c73af8fca213512856c7a09db52-0000.us-east.containers.appdomain.cloud/swagger.json.svg?label=api+demo)](http://max-news-text-generator.codait-prod-41208c73af8fca213512856c7a09db52-0000.us-east.containers.appdomain.cloud)
 
-[<img src="docs/deploy-max-to-ibm-cloud-with-kubernetes-button.png" width="400px">](http://ibm.biz/max-to-ibm-cloud-tutorial) 
+[<img src="docs/deploy-max-to-ibm-cloud-with-kubernetes-button.png" width="400px">](http://ibm.biz/max-to-ibm-cloud-tutorial)
 
 # IBM Code Model Asset Exchange: News Text Generator
 
@@ -17,7 +17,7 @@ in a Docker container. This repository was developed as part of the
 ## Model Metadata
 | Domain | Application | Industry  | Framework | Training Data | Input Data Format |
 | ------------- | --------  | -------- | --------- | --------- | -------------- | 
-| Text | Text generation | Multi | TensorFlow | 1 Billion Word Language Model Benchmark | text file| 
+| Text | Text generation | Multi | TensorFlow | 1 Billion Word Language Model Benchmark | text file|
 
 ## References
 
@@ -51,7 +51,7 @@ Rafal Jozefowicz, Oriol Vinyals, Mike Schuster, Noam Shazeer: “Exploring the L
 To run the docker image, which automatically starts the model serving API, run:
 
 ```
-$ docker run -it -p 5000:5000 codait/max-news-text-generator
+$ docker run -it -p 5000:5000 quay.io/codait/max-news-text-generator
 ```
 
 This will pull a pre-built image from Docker Hub (or use an existing image if already cached locally) and run it.
@@ -149,5 +149,5 @@ To run the Flask API app in debug mode, edit `config.py` to set `DEBUG = True` u
 To stop the docker container type `CTRL` + `C` in your terminal.
 
 ## Resources and Contributions
-   
+
 If you are interested in contributing to the Model Asset Exchange project or have any queries, please follow the instructions [here](https://github.com/CODAIT/max-central-repo).
