@@ -27,6 +27,6 @@ spec:
     spec:
       containers:
       - name: max-news-text-generator
-        image: codait/max-news-text-generator:latest
+        image: quay.io/codait/max-news-text-generator:latest
         ports:
         - containerPort: 5000
